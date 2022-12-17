@@ -1,0 +1,15 @@
+[
+{ 
+"Condition": { "KeyPrefixEquals": "docs/" },          //  condition은 조건을 입력하는 부분으로, key가 되는prefix를 docs/와 동일하게 설정
+                                                                     즉 docs/ 로 시작되는 모든 요청을 의미
+
+
+"Redirect": { "ReplaceKeyPrefixWith": "documents/" }   // rediriect는 조건에 해당하는 경우 수행할 내용을 기입
+                                                                          replace를 하는데, key가 되는 prefix를 documents/로 
+                                                                          즉 요청을 documents/로 변경
+]
+
+// 버킷에서 docs폴더와 documents 폴더를 만들었다 가정하고
+docs폴더에는 아무 파일이 없고, documents폴더에는test.html이 존재한다
+docs 폴더로 들어온 모든 요청은 documents로 변경해보도록 설정한 내용
+리디렉션 규칙에는 내용이 안들어가도 상관없음

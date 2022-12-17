@@ -1,0 +1,18 @@
+{
+"Version":"2012-10-17", 
+"Statement":
+[
+{
+"Sid":"PublicRead",  //sid는 그냥 정책을 구분하기 위한 이름입니다
+"Effect":"Allow",  //effect에 허용(allow) 거부(deny)를 선택할 수 있습니다. 허용하려고 설정하는 것이므로 allow를 기입했습니다
+"Principal": "*"  //principal은 이 정책에 적용되는 대상입니다.‘*’은 모두를 의미합니다. 즉 누구라도 적용됩니다.
+, 
+"Action":["s3:GetObject","s3:GetObjectVersion"],   // Action에는 권한을 기입합니다.
+getObject를 통해서 S3에 올린 파일에 접근하도록 합니다.
+getObjectVersion을 통해 파일의 버전도 접근허용합니다.
+
+"Resource":["arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"] // Resource는 적용될 대상을 기입합니다. S3 arn을 입력하여 해당 S3버킷으로 한정합니다.
+                                                                      DOC-EXAMPLE-BUCKET: 버킷 소스의 리소스 이름(주소)
+}
+]
+}
